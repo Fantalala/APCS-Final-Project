@@ -44,6 +44,9 @@ public class Drafter extends JFrame {
         championNames.add("Aatrox");
         championNames.add("Ahri");
         championNames.add("Akali");
+        championNames.add("Akshan");
+        championNames.add("Alistar");
+        championNames.add("Amumu");
         // Add more champion names as needed
     }
 
