@@ -8,6 +8,11 @@ import java.awt.image.BufferedImage;
 import java.net.URL;
 import java.util.ArrayList;
 import java.util.List;
+import java.io.BufferedReader;
+import java.io.FileReader;
+import java.io.IOException;
+import java.util.HashMap;
+import java.util.Map;
 
 public class Drafter extends JFrame {
     private List<JLabel> pickRowLabels;
@@ -19,16 +24,18 @@ public class Drafter extends JFrame {
     private String[] BPOrder = {
         "ban", "ban", "ban", "ban", "ban", "ban",
         "pick", "pick", "pick", "pick", "pick", "pick",
-        "ban", "ban", "ban", "ban"
+        "ban", "ban", "ban", "ban", "pick", "pick", "pick", "pick"
     };
     private String[] teamOrder = {
         "blue", "red", "blue", "red", "blue", "red",
-        "blue", "red", "blue", "red", "red", "blue",
         "blue", "red", "red", "blue", "blue", "red",
+        "blue", "red", "blue", "red", "red", "blue",
         "blue", "red"
     };
     private static final int ICON_SIZE = 100;
     private JLabel statusLabel;
+    private String[] blueTeam = new String[5];
+    private String[] redTeam = new String[5];
 
     public Drafter() {
         setTitle("League of Legends Drafter");
@@ -47,6 +54,21 @@ public class Drafter extends JFrame {
         championNames.add("Akshan");
         championNames.add("Alistar");
         championNames.add("Amumu");
+        championNames.add("Anivia");
+        championNames.add("Annie");
+        championNames.add("Aphelios");
+        championNames.add("Ashe");
+        championNames.add("Aurelion_Sol");
+        championNames.add("Azir");
+        championNames.add("Bard");
+        championNames.add("Blitzcrank");
+        championNames.add("Brand");
+        championNames.add("Braum");
+        championNames.add("Caitlyn");
+        championNames.add("Camille");
+        championNames.add("Cassiopeia");
+        championNames.add("Cho'Gath");
+
         // Add more champion names as needed
     }
 
@@ -66,7 +88,7 @@ public class Drafter extends JFrame {
         topPanel.add(statusLabel, BorderLayout.NORTH);
 
         JPanel rowsPanel = new JPanel();
-        rowsPanel.setLayout(new GridLayout(2, 1, 10, 10)); 
+        rowsPanel.setLayout(new GridLayout(0, 1, 10, 10)); 
 
         rowsPanel.add(createBanRowPanel());
         rowsPanel.add(createPickRowPanel());
@@ -167,8 +189,10 @@ public class Drafter extends JFrame {
                                 }
                             } else if (BPOrder[draftOrder].equals("pick")) {
                                 if (teamOrder[draftOrder].equals("blue")) {
+                                    blueTeam[nextPickRowIndex] = name;
                                     placeIcon(pickRowLabels, imageIcon, true);
                                 } else {
+                                    redTeam[nextPickRowIndex] = name;
                                     placeIcon(pickRowLabels, imageIcon, false);
                                 }
                             }
@@ -235,11 +259,24 @@ public class Drafter extends JFrame {
         }
     }
 
+    private int evaluateScore(String[] team) {
+        int score = 0;
+        for (String champion : team) {
+            if (champion != null) {
+                // Calculate the score based on the champion
+            }
+        }
+        return score;
+    }
+
     private void updateStatusLabel() {
         if (draftOrder < BPOrder.length) {
             statusLabel.setText(teamOrder[draftOrder] + " " + BPOrder[draftOrder]);
         } else {
-            statusLabel.setText("Drafting complete");
+            TeamEvaluator evaluator = new TeamEvaluator();
+            int blueScore = evaluator.evaluateTeam(blueTeam);
+            int redScore = evaluator.evaluateTeam(redTeam);
+            statusLabel.setText("Drafting complete. Blue team score: " + blueScore + "Red team score: " + redScore);
         }
     }
 

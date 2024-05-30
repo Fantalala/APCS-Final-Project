@@ -1,0 +1,21 @@
+Name,Lane,Range,Damage Type,Role,Picks,Bans,Presence,Wins,Losses
+Aatrox,Top,Melee,Physical,Fighter,10,5,15,7,3
+Ahri,Mid,Ranged,Magic,Mage,12,8,20,9,3
+Akali,Mid,Melee,Magic,Assassin,14,7,21,8,6
+Akshan,Mid,Ranged,Physical,Marksman,8,6,14,5,4
+Alistar,Support,Melee,Magic,Support,11,9,20,7,4
+Amumu,Jungle,Melee,Magic,Tank,13,4,17,8,5
+Anivia,Mid,Ranged,Magic,Mage,10,7,17,6,4
+Annie,Mid,Ranged,Magic,Mage,9,5,14,5,4
+Aphelios,ADC,Ranged,Physical,Marksman,15,10,25,10,5
+Ashe,ADC,Ranged,Physical,Marksman,14,9,23,9,5
+Aurelion_Sol,Mid,Ranged,Magic,Mage,8,6,14,5,3
+Azir,Mid,Ranged,Magic,Mage,11,8,19,7,5
+Bard,Support,Melee,Magic,Support,12,10,22,8,4
+Blitzcrank,Support,Melee,Magic,Support,14,11,25,9,6
+Brand,Support,Ranged,Magic,Mage,10,8,18,6,4
+Braum,Support,Melee,Magic,Support,13,9,22,8,5
+Caitlyn,ADC,Ranged,Physical,Marksman,15,12,27,10,7
+Camille,Top,Melee,Physical,Fighter,12,6,18,7,5
+Cassiopeia,Mid,Ranged,Magic,Mage,9,7,16,5,4
+Cho'Gath,Top,Melee,Magic,Tank,11,8,19,6,5
