@@ -259,16 +259,6 @@ public class Drafter extends JFrame {
         }
     }
 
-    private int evaluateScore(String[] team) {
-        int score = 0;
-        for (String champion : team) {
-            if (champion != null) {
-                // Calculate the score based on the champion
-            }
-        }
-        return score;
-    }
-
     private void updateStatusLabel() {
         if (draftOrder < BPOrder.length) {
             statusLabel.setText(teamOrder[draftOrder] + " " + BPOrder[draftOrder]);
